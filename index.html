@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevPortfolio | High-Speed Bug Fixes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: "#0a0a0a",
+                        terminalBg: "#121212",
+                        electricBlue: "#3b82f6",
+                        neonGreen: "#22c55e",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"],
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-darkBg text-gray-200 font-sans">
+    <nav class="sticky top-0 z-50 bg-darkBg/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-mono text-electricBlue font-bold text-xl">
+                &lt;Pablo/&gt;
+            </div>
+            <a href="https://fiverr.com" target="_blank"
+                class="bg-electricBlue hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold transition">
+                Hire me on Fiverr
+            </a>
+        </div>
+    </nav>
+
+    <section class="reveal max-w-6xl mx-auto px-6 py-20 lg:py-32 text-center">
+        <h1 class="text-5xl lg:text-8xl font-extrabold text-white mb-6 tracking-tight">
+            Stop Losing Users to <span class="text-electricBlue">Broken Code.</span>
+        </h1>
+        <p class="text-gray-400 text-lg lg:text-xl max-w-2xl mx-auto mb-10">
+            I build high-conversion landing pages and squash bugs faster than your
+            coffee cools down.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#services"
+                class="bg-neonGreen text-black px-8 py-4 rounded-md font-bold text-lg hover:opacity-90 transition animate-pulse-custom">Fix
+                My Site</a>
+            <a href="#projects"
+                class="border border-white/20 hover:bg-white/5 px-8 py-4 rounded-md font-bold text-lg transition">View
+                Projects</a>
+        </div>
+    </section>
+
+    <section class="reveal max-w-4xl mx-auto px-6 mb-32">
+        <div class="terminal-container bg-terminalBg rounded-xl border border-white/10 overflow-hidden shadow-2xl">
+            <div class="bg-white/5 px-4 py-2 flex gap-2 border-b border-white/10">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <span class="ml-4 font-mono text-xs text-gray-500">terminal — bash</span>
+            </div>
+            <div class="p-6 font-mono text-sm sm:text-base space-y-4">
+                <div class="flex">
+                    <span class="text-neonGreen mr-2">➜</span>
+                    <span class="text-electricBlue mr-2">~/logs</span>
+                    <span id="typing-command"></span><span class="animate-pulse">_</span>
+                </div>
+                <div id="terminal-logs" class="space-y-4">
+                    <div class="border-l-2 border-white/10 pl-4 py-1">
+                        <p class="text-gray-400 font-bold">
+                            [Solved] Memory Leak in React Dashboard
+                        </p>
+                        <p class="text-xs text-gray-500">
+                            Optimized memory consumption by 40%.
+                        </p>
+                    </div>
+                    <div class="border-l-2 border-white/10 pl-4 py-1 text-neonGreen">
+                        <p class="font-bold">[Solved] 502 Bad Gateway - Node.js API</p>
+                        <p class="text-xs opacity-80">Uptime restored to 99.9%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        
+        <section class="reveal max-w-6xl mx-auto px-6 mb-32">
+        <h2 class="text-3xl font-bold mb-10 text-center text-white">Technology Arsenal</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="tech-card"><img src="https://cdn.simpleicons.org/html5/white" alt="HTML5"><span>HTML5</span></div>
+            <div class="tech-card"><img src="https://cdn.simpleicons.org/css/white" alt="CSS"><span>CSS</span></div>
+            <div class="tech-card"><img src="https://cdn.simpleicons.org/javascript/white" alt="JS"><span>JavaScript</span></div>
+            <div class="tech-card"><img src="https://cdn.simpleicons.org/react/white" alt="React"><span>React</span></div>
+            <div class="tech-card"><img src="https://cdn.simpleicons.org/nodedotjs/white" alt="Node.js"><span>Node.js</span></div>
+            <div class="tech-card"><img src="https://cdn.simpleicons.org/tailwindcss/white" alt="Tailwind"><span>Tailwind</span></div>
+            <div class="tech-card"><img src="https://cdn.simpleicons.org/python/white" alt="Python"><span>Python</span></div>
+            <div class="tech-card"><img src="https://cdn.simpleicons.org/git/white" alt="Git"><span>Git</span></div>
+        </div>
+    </section>
+
+    <section id="services" class="reveal max-w-6xl mx-auto px-6 mb-32 overflow-hidden">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-4xl font-bold text-white mb-2">Core Services</h2>
+                <p id="service-counter" class="font-mono text-electricBlue text-sm">01 / 04</p>
+            </div>
+            <div class="flex gap-4">
+                <button id="prev-btn" class="p-3 rounded-full border border-white/10 hover:bg-white/5 transition"><i data-lucide="arrow-left"></i></button>
+                <button id="next-btn" class="p-3 rounded-full border border-white/10 hover:bg-white/5 transition"><i data-lucide="arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="carousel-container relative">
+            <div id="carousel-track" class="flex transition-transform duration-500 ease-out gap-6">
+                <div class="carousel-card glass-card">
+                    <i data-lucide="layout" class="text-electricBlue mb-6 w-12 h-12"></i>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Landing Page Build</h3>
+                    <p class="text-gray-400">High-speed, SEO-optimized pages that convert.</p>
+                </div>
+                <div class="carousel-card glass-card">
+                    <i data-lucide="bug" class="text-red-500 mb-6 w-12 h-12"></i>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Bug Surgery</h3>
+                    <p class="text-gray-400">Deep-dive debugging for complex React/Node issues.</p>
+                </div>
+                <div class="carousel-card glass-card">
+                    <i data-lucide="zap" class="text-yellow-400 mb-6 w-12 h-12"></i>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Performance Optimization</h3>
+                    <p class="text-gray-400">Crushing Core Web Vitals and load times.</p>
+                </div>
+                <div class="carousel-card glass-card">
+                    <i data-lucide="link" class="text-green-400 mb-6 w-12 h-12"></i>
+                    <h3 class="text-2xl font-bold mb-4 text-white">API Integration</h3>
+                    <p class="text-gray-400">Seamlessly connecting your frontend to any backend.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 py-12 text-center text-gray-500">
+        <div class="flex justify-center gap-8 mb-6">
+            <div class="relative inline-block">
+                <button id="discord-btn" class="hover:text-white transition">
+                    Discord
+                </button>
+                <span id="copy-tooltip" class="tooltip">Copied!</span>
+            </div>
+        </div>
+        <p class="text-xs font-mono uppercase tracking-widest">
+            &copy; 2026 Developer Portfolio
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+/* Typography & Line Height */
+h1, h2, h3 { line-height: 1.1; }
+
+/* Scroll Reveal Logic */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Terminal Scanline & Glow */
+.terminal-container {
+    position: relative;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.05);
+}
+.terminal-container::before {
+    content: " ";
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Animations & Tooltips */
+@keyframes pulse-subtle {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); box-shadow: 0 0 15px 5px rgba(34, 197, 94, 0.2); }
+}
+.animate-pulse-custom { animation: pulse-subtle 3s infinite; }
+
+#terminal-logs > div { opacity: 0; transform: translateX(-10px); transition: all 0.4s ease; }
+#terminal-logs > div.show { opacity: 1; transform: translateX(0); }
+
+/* Interactive Glow Cards */
+.hover-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+}
+.glow-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(59, 130, 246, 0.15), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+.hover-card:hover .glow-overlay { opacity: 1; }
+
+/* Project Mesh Gradient */
+.mesh-bg {
+    background-color: #000;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(34, 197, 94, 0.1) 0px, transparent 50%);
+}
+
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #22c55e;
+    color: black;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+} 
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Tech Arsenal Hover Effect */
+.tech-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.tech-card img {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1rem;
+    filter: grayscale(1);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+.tech-card:hover { border-color: rgba(59, 130, 246, 0.5); background: rgba(255,255,255,0.02); }
+.tech-card:hover img { filter: grayscale(0); transform: scale(1.1); }
+.tech-card span { font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; color: #9ca3af; }
+
+/* Service Carousel Logic */
+.carousel-card {
+    min-width: calc(100% - 24px); /* Mobile view */
+    flex-shrink: 0;
+}
+@media (min-width: 768px) {
+    .carousel-card { min-width: calc(50% - 12px); } /* 2 cards per view on desktop */
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+}
+
+/* Pulse Animation */
+@keyframes pulse-subtle {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+    50% { transform: scale(1.03); box-shadow: 0 0 15px 5px rgba(34, 197, 94, 0); }
+}
+.animate-pulse-custom { animation: pulse-subtle 3s infinite; }
